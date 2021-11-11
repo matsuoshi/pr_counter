@@ -8,7 +8,7 @@ octokit
     .paginate('GET /repos/ec-cube/ec-cube/pulls', {
         state: 'closed',
         sort: 'updated',
-        direction: 'updated',
+        direction: 'desc',
         per_page: 100
     }, (response, done) => {
         const data = response.data.filter(pull => {
