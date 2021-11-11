@@ -2,7 +2,7 @@ const { Octokit } = require("@octokit/rest")
 const octokit = new Octokit()
 const dayjs = require("dayjs")
 
-const START_DATE = new dayjs('2021/09/28')
+const START_DATE = process.env.START_DATE || new dayjs('2021/09/28')
 
 octokit
     .paginate('GET /repos/ec-cube/ec-cube/pulls', {
